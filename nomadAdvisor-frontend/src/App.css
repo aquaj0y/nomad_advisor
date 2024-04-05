@@ -80,9 +80,9 @@ body {
   padding: 1em;
 }
 
-/* styles.css */
-
-.btn {
-  background-color: #1f883d;
-  /* the rest of the styles */
+/* HOT CITIES SECTION */
+.hot-cities-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3em;
 }
