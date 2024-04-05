@@ -1,0 +1,88 @@
+/* Fonts */
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Header */
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  background-color: #2279fc;
+}
+
+.header-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.explore {
+  padding: 2em;
+}
+
+#search-icon {
+  padding: 2em;
+}
+
+.logo {
+  width: 150px;
+}
+
+/* Footer */
+
+.footer-flex {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: #2279fc;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.footer-links > p {
+  padding: 1em;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-copy {
+  padding: 1em;
+}
+
+.footer-terms {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.footer-terms > p {
+  padding: 1em;
+}
+
+/* styles.css */
+
+.btn {
+  background-color: #1f883d;
+  /* the rest of the styles */
+}
