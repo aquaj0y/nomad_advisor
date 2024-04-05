@@ -54,14 +54,3 @@ class CitySerializer(serializers.HyperlinkedModelSerializer):
        model = City
        fields = ( 'name', 'country', 'like', 'dislike', 'image', 'review')
 
-
-# class CityReviewsSerializer(serializers.HyperlinkedModelSerializer):
-#     # reviews = serializers.HyperlinkedRelatedField(
-#     #     view_name='review_detail',
-#     #     many=True,
-#     #     read_only=True
-#     # )
-
-#     class Meta:
-#        model = City
-#        fields = ('review')
