@@ -1,10 +1,8 @@
 import axios from 'axios'
-import ReviewForm from "./ReviewForm"
 import { useState, useEffect, useContext} from "react"
 import UserContext from '../UserContext'
-import MediaCard from './MediaCard'
-
-
+import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 // MUI MediaCard
 import * as React from 'react';
@@ -48,6 +46,13 @@ export default function Home() {
     getCityList()
   }, [])
 
+
+  // Add City Form Routes
+  let navigate = useNavigate();
+  const directForm = () => {
+    navigate(`/addcity`)
+  }
+
   return (
     <div>
       <h2>What's Hot</h2>
@@ -80,7 +85,18 @@ export default function Home() {
       ))}
       </div>
       {/* Review Section */}
-      <ReviewForm />
+      <div className='review-section'>
+        <div className='review-title'>
+          <h3 style={{ fontSize: '2em'}}>Places You Recommend</h3>
+          <h4>Put a new city on the digital nomad map</h4>
+        </div>
+        <Link to='/newcity'>
+          <Button className='button' variant
+            ='contained'>
+              Add to List
+          </Button>
+        </Link>
+      </div>
       {/* Pick a Season */}
 
       
