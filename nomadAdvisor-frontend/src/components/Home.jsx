@@ -43,7 +43,6 @@ export default function Home() {
       setUniqueTags([...new Set(allTags)])
       // console.log(uniqueTags);
 
-
     }
 
     getCityList()
