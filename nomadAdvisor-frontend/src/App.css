@@ -85,4 +85,19 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 3em;
+  margin: 0 auto;
+  width: 85%;
+}
+
+/* Review Section */
+.review-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url("../src/assets/review-section-bg.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 30vh;
+  color: white;
 }
