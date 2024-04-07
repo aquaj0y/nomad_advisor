@@ -15,11 +15,30 @@ body {
   background-color: #2279fc;
 }
 
-.header-logo {
+.header-nav {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+.header-logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header-logo {
+  cursor: pointer;
+  margin: -6px;
+}
+
+.logo {
+  width: 100px;
+}
+
+.logo-text {
+  font-size: 1.75em;
 }
 
 .explore {
@@ -30,7 +49,7 @@ body {
   padding: 2em;
 }
 
-.logo {
+.footer-logo {
   width: 150px;
 }
 

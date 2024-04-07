@@ -9,8 +9,6 @@ export default function NewCityForm() {
 
   const [formState, setFormState] = useState(initialState);
 
-  let { id } = useParams()
-
   const handleSubmit = (event) => {
     event.preventDefault()
     console.log()
