@@ -29,7 +29,7 @@ export default function NewCityForm() {
           </div>
 
           <div>
-            <label for="inline-full-name">
+            <label htmlFor="inline-full-name">
               What do you like about this place?
             </label>
           </div>
