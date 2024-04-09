@@ -52,5 +52,5 @@ class CitySerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
        model = City
-       fields = ( 'name', 'country', 'like', 'dislike', 'image', 'review')
+       fields = ( 'name', 'country', 'like', 'dislike', 'image', 'review', 'neighborhood')
 
