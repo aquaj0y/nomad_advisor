@@ -16,52 +16,31 @@ import Typography from '@mui/material/Typography';
 
 export default function Home() {
   const [cityList, setCityList] = useState([])
-  const [cityId, setCityId] = useState('')
   const [uniqueTags, setUniqueTags] = useState([])
-  const [testUniqueTags, setTestUniqueTags] = useState([])
-
   // const { user, setUser } = useContext(UserContext)
 
   // Add City Form Routes
-
   let navigate = useNavigate();
   const directForm = () => {
     navigate(`/addcity`)
   }
-
-  // const goCityDetails = (cityName) => {
-  //   navigate(`city/${city.name}`)
-  // }
-  
     
   useEffect(() => {
     const getCityList = async()=> {
       let response = await axios.get(`http://127.0.0.1:8000/cities/`)
 
-
-      // console.log(response.data)
       setCityList(response.data)
-      console.log('line 41', response)
-      console.log('cityList is', cityList)
 
-      // const allTags = response.data.flatMap(city => 
-      //   city.review.flatMap(review => review.tags)
-      // );
       const allTags = response.data.flatMap(city => 
         city.review.flatMap(review => review.tags)
       );
       console.log('allTags', allTags);
-      
-      // setUniqueTags([...new Set(allTags)]);
+    
       setUniqueTags([...new Set(allTags)])
       // console.log(uniqueTags);
-
     }
-
     getCityList()
   }, [])
-
-
 
   return (
     <div>
@@ -86,7 +65,7 @@ export default function Home() {
             </Typography>
           </CardContent>
           <CardActions>
-            {city.review.map((review)=> review.tags.slice(0,3).map((tag) => (
+            {city.review.map((review)=> review.tags.slice(0,1).map((tag) => (
               <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">{tag}</span>
             )))}
             <Link to={`/cities/${city.id}`}>
