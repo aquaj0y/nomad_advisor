@@ -70,8 +70,8 @@ export default function CityDetails() {
             <div>
               {/* Tags */}
 
-              {cityTags.map((tag) =>(
-              <h3>{tag}</h3>))}
+              {cityTags.map((tag) => (
+                <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">{tag}</span>))}
             </div>
 
           <h2>Best Nomad Neighborhood</h2>
