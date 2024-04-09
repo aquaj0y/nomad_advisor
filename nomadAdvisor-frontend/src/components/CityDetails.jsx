@@ -4,6 +4,8 @@ import { useEffect } from "react"
 import { useParams } from "react-router-dom"
 import axios from 'axios'
 
+const googleAPI = import.meta.env.VITE_GOOGLE_API_KEY
+
 
 export default function CityDetails() {
   // let { name } = useParams()
@@ -45,17 +47,25 @@ export default function CityDetails() {
         <h2>Why We Love Here</h2>
         <div>
           {/* Tags */}
-          
+
+          {/* {city.review.map(
+            (review) => review.tags.slice(0, 6).map(
+              (tag) => (<h3>{tag}</h3>)))} */}
         </div>
 
         <h2>Best Nomad Neighborhood</h2>
         {/* Google Maps Embed */}
-
+        <iframe
+          width="600"
+          height="450"
+          style={{ border: "0" }}
+          loading="lazy"
+          allowFullScreen
+          referrerPolicy="no-referrer-when-downgrade"
+          src={`https://www.google.com/maps/embed/v1/place?key=${googleAPI}&q=Roma Nte.`}
+          allowfullscreen>
+        </iframe>
         <h2>Co-working Space</h2>
-        <div>
-
-        </div>
-
       </div>
     </div>
   )
