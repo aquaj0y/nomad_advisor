@@ -8,6 +8,7 @@ class City(models.Model):
   image = models.CharField(default = '')
   like = models.IntegerField(default = 0)
   dislike = models.IntegerField(default = 0)
+  # neighborhood = models.CharField(max_length=100, blank = True)
 
   def __str__(self):
     return self.name
@@ -15,7 +16,7 @@ class City(models.Model):
 class Review(models.Model):
   city = models.ForeignKey('City', on_delete = models.CASCADE, related_name='review')
   user = models.ForeignKey('User', on_delete = models.CASCADE, related_name='review')
-  tags = ArrayField(models.CharField(max_length=200, blank=False))
+  tags = ArrayField(models.CharField(max_length=200, blank=False, default=list))
   description = models.CharField(max_length=1000, blank=True)
 
   def __str__(self):
