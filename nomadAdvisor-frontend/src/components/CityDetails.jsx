@@ -36,6 +36,7 @@ export default function CityDetails() {
 
       console.log(response.data)
       console.log(allTags)
+      console.log('cityTags is', cityTags)
     }
   
     getCityDetails()
@@ -51,7 +52,7 @@ export default function CityDetails() {
   return (
     <div>
       {/* SWIPER */}
-
+      {console.log('cityTags here', cityTags)}
       <div className='details-container'>
 
         <React.Fragment>
@@ -67,10 +68,10 @@ export default function CityDetails() {
             <h2 className='details-subtitle'>Why We Love Here</h2>
             
             <div>
-            {/* Tags */}
+              {/* Tags */}
 
-              {cityTags.maps((tag) =>
-                <h3>{tag}</h3>)}
+              {cityTags.map((tag) =>(
+              <h3>{tag}</h3>))}
             </div>
 
           <h2>Best Nomad Neighborhood</h2>
@@ -89,9 +90,6 @@ export default function CityDetails() {
           </Container>
         </React.Fragment>
 
-
-
-        
         <ThemeProvider
           theme={{
             palette: {
