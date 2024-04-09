@@ -120,3 +120,23 @@ body {
   min-height: 30vh;
   color: white;
 }
+
+/* CITY DETAILS PAGE */
+
+.details-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.details-title {
+  font-size: 2.2em;
+}
+
+.details-subtitle {
+  font-size: 1.7em;
+  color: blue;
+}
+
+.city-review {
+  background-image: url("../src/assets/review-section-bg2.jpeg");
+}
