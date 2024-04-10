@@ -30,7 +30,7 @@ body {
 
 .header-logo {
   cursor: pointer;
-  margin: -6px;
+  margin: -3px;
 }
 
 .logo {
@@ -99,6 +99,7 @@ body {
   padding: 1em;
 }
 
+/* HOME PAGE */
 /* HOT CITIES SECTION */
 .hot-cities-section {
   display: flex;
@@ -119,6 +120,12 @@ body {
   background-position: center;
   min-height: 30vh;
   color: white;
+}
+
+/* Pick a Season Section */
+.season-flex {
+  display: flex;
+  justify-content: center;
 }
 
 /* CITY DETAILS PAGE */

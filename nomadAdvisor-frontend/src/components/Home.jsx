@@ -4,6 +4,12 @@ import UserContext from '../UserContext'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
+// Import Images
+import springBg from '../assets/spring.jpg'
+import summerBg from '../assets/summer.jpeg'
+import fallBg from '../assets/fall.jpeg' 
+import winterBg from '../assets/winter.jpeg'
+
 // MUI MediaCard
 import * as React from 'react';
 import Card from '@mui/material/Card';
@@ -12,6 +18,10 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+
+
+// MUI
+import Box from '@mui/material/Box';
 
 
 export default function Home() {
@@ -44,13 +54,26 @@ export default function Home() {
 
   return (
     <div>
-      <h2>What's Hot</h2>
-      <div className='hot-cities-section'>
+      <h2 style={{
+        fontSize: '2em',
+        padding: '1em'
+      }}>What's Hot</h2>
+      <div
+        className='hot-cities-section'
+        style={{
+          padding: '1em',
+          paddingBottom: '2em'
+        }}
+      >
       {/* Render Cities */}
       
       {/* MediaCard */}
       {cityList.map((city, index) => (
-        <Card key={index} sx={{ maxWidth: 345 }}>
+        <Card key={index} sx={{
+          maxWidth: 545,
+          disableGutters: true,
+          fixed: true
+        }}>
           <CardMedia
             sx={{ height: 140 }}
             image={city.image}
@@ -88,9 +111,94 @@ export default function Home() {
           </Button>
         </Link>
       </div>
-      {/* Pick a Season */}
 
+      {/* Pick a Season */}
+      <h2 style={{
+        fontSize: '2em',
+        padding: '1em'
+      }}>Pick a Season</h2>
       
-    </div>
+      <Box
+        height={200}
+        maxWidth={'80%'}
+        my={4}
+        sx={{
+          margin: '0 auto',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center', 
+          flexWrap: 'wrap', 
+          gap: 0.1, 
+          paddingBottom: '1em'
+      }}>
+
+        <Card sx={{
+          maxWidth: 245,
+          disableGutters: true,
+          // fixed: true,
+        }}>
+          <CardMedia
+            sx={{
+              height: 140,
+            }}
+            image={springBg}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Spring
+            </Typography>
+          </CardContent>
+        </Card>
+
+        <Card sx={{
+          maxWidth: 245,
+          disableGutters: true,
+          // fixed: true,
+        }}>
+          <CardMedia
+            sx={{ height: 140 }}
+            image={summerBg}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Summer
+            </Typography>
+          </CardContent>
+        </Card>
+
+        <Card sx={{
+          maxWidth: 245,
+          disableGutters: true,
+          // fixed: true,
+        }}>
+          <CardMedia
+            sx={{ height: 140 }}
+            image={fallBg}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Fall
+            </Typography>
+          </CardContent>
+        </Card>
+
+        <Card sx={{
+          maxWidth: 245,
+          disableGutters: true,
+          // fixed: true
+        }}>
+          <CardMedia
+            sx={{ height: 140 }}
+            image={winterBg}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Winter
+            </Typography>
+          </CardContent>
+        </Card>
+      </Box>
+      </div>
+
   )
 }

@@ -10,6 +10,7 @@ class City(models.Model):
   like = models.IntegerField(default = 0)
   dislike = models.IntegerField(default = 0)
   neighborhood = models.CharField(max_length=100)
+  collection = models.CharField(max_length=50, default ='')
 
   def __str__(self):
     return self.name
