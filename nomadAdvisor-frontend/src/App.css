@@ -140,3 +140,22 @@ body {
 .city-review {
   background-image: url("../src/assets/review-section-bg2.jpeg");
 }
+
+/* Explore Collections Page */
+
+.page-title {
+  font-size: 2em;
+}
+
+.collection-containter {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.collection-containter > Paper {
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 3em;
+}
