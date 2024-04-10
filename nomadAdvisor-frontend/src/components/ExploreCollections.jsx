@@ -1,5 +1,8 @@
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
@@ -14,6 +17,19 @@ import mountainsBg from '../assets/mountains.jpeg'
 
 export default function ExploreCollections() {
   const navigate = useNavigate()
+  const [cityCollection, setCityCollection] = useState('')
+
+  useEffect(() => {
+    const getCollection = async () => {
+      let response = await axios.get(`http://127.0.0.1:8000/cities/`)
+
+      let city = response.data.filter((city) => city.collection === 'City')
+
+      setCityCollection(city)
+
+    }
+    getCollection()
+  }, [])
   
   return (
     <div>
@@ -34,7 +50,7 @@ export default function ExploreCollections() {
       >
         {/* <Container maxWidth={'xl'}> */}
 
-        <Link to={`/cities/${city.id}`}>
+        {/* <Link to={`/cities/${}`}> */}
         <Paper
           // justifyContent="center"
           // alignItems="center"
@@ -45,9 +61,9 @@ export default function ExploreCollections() {
         >
           <h2 className='section-title'>Beaches</h2>
           </Paper>
-        </Link>
+        {/* </Link> */}
 
-        <Link to={`/collections`}>
+
           <Paper
             onClick={()=>navigate(`/collections/${collection}`)}
             sx={{
@@ -57,7 +73,6 @@ export default function ExploreCollections() {
           >
           <h2 className='section-title'>Cities</h2>
           </Paper>
-        </Link>
 
         <Paper
           sx={{
