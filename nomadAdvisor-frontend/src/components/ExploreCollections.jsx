@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Container from '@mui/material/Container';
@@ -11,6 +13,8 @@ import mountainsBg from '../assets/mountains.jpeg'
 
 
 export default function ExploreCollections() {
+  const navigate = useNavigate()
+  
   return (
     <div>
       <h1 className='page-title'>Discover Something New</h1>
@@ -29,6 +33,8 @@ export default function ExploreCollections() {
         }}
       >
         {/* <Container maxWidth={'xl'}> */}
+
+        <Link to={`/cities/${city.id}`}>
         <Paper
           // justifyContent="center"
           // alignItems="center"
@@ -38,15 +44,21 @@ export default function ExploreCollections() {
         }}
         >
           <h2 className='section-title'>Beaches</h2>
-        </Paper>
-        <Paper
-          sx={{
-            backgroundImage: `url(${citiesBg})`,
-            backgroundPosition: 'center'
-        }}
-        >
+          </Paper>
+        </Link>
+
+        <Link to={`/collections`}>
+          <Paper
+            onClick={()=>navigate(`/collections/${collection}`)}
+            sx={{
+              backgroundImage: `url(${citiesBg})`,
+              backgroundPosition: 'center'
+          }}
+          >
           <h2 className='section-title'>Cities</h2>
-        </Paper>
+          </Paper>
+        </Link>
+
         <Paper
           sx={{
             backgroundImage: `url(${castlesBg})`,
