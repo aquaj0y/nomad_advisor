@@ -17,19 +17,24 @@ import mountainsBg from '../assets/mountains.jpeg'
 
 export default function ExploreCollections() {
   const navigate = useNavigate()
-  const [cityCollection, setCityCollection] = useState('')
+  // const [cityCollection, setCityCollection] = useState('')
 
-  useEffect(() => {
-    const getCollection = async () => {
-      let response = await axios.get(`http://127.0.0.1:8000/cities/`)
+  // useEffect(() => {
+  //   const getCollection = async () => {
+  //     let response = await axios.get(`http://127.0.0.1:8000/cities/`)
 
-      let city = response.data.filter((city) => city.collection === 'City')
+  //     console.log(response.data)
+  //     let cityArr = response.data.filter((city) => city.collection === 'City')
+  //     console.log(cityArr)
+  //     setCityCollection(cityArr)
+  //   }
 
-      setCityCollection(city)
+  //   // const handleClick = async (cityCollection) => {
+  //   //   navigate(`/collections/${cityCollection}`)
+  //   // }
 
-    }
-    getCollection()
-  }, [])
+  //   getCollection()
+  // }, [])
   
   return (
     <div>
@@ -54,6 +59,7 @@ export default function ExploreCollections() {
         <Paper
           // justifyContent="center"
           // alignItems="center"
+          onClick={()=>navigate(`/explore/beaches`)}
           sx={{
             backgroundImage: `url(${beachesBg})`,
             backgroundPosition: 'center'
@@ -65,7 +71,7 @@ export default function ExploreCollections() {
 
 
           <Paper
-            onClick={()=>navigate(`/collections/${collection}`)}
+            onClick={()=>navigate(`/explore/cities`)}
             sx={{
               backgroundImage: `url(${citiesBg})`,
               backgroundPosition: 'center'
@@ -75,6 +81,8 @@ export default function ExploreCollections() {
           </Paper>
 
         <Paper
+          
+          onClick={()=>navigate(`/explore/castles`)}
           sx={{
             backgroundImage: `url(${castlesBg})`,
             backgroundPosition: 'center'
@@ -83,6 +91,7 @@ export default function ExploreCollections() {
           <h2 className='section-title'>Castles</h2>
         </Paper>
         <Paper
+          onClick={()=>navigate(`/explore/mountains`)}
           sx={{
             backgroundImage: `url(${mountainsBg})`,
             backgroundPosition: 'center'
