@@ -15,18 +15,48 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 
-
-
 export default function ExplorePage() {
-let {city}  = useParams
+  let params = useParams();
+  console.log('what is params', params)
+
+  const [data, setData] = useState([])
+
+
+  useEffect(() => {
+    const getCollection = async () => {
+      try {
+        const response = await axios.get(`http://127.0.0.1:8000/cities/`)
+        console.log(response.data)
+
+        const collectionMap = {
+          cities: 'City',
+          beaches: 'Beach'
+        }
+        const collectionName = collectionMap[params.collectionType] || ''
+        
+        if (collectionName) {
+          const placesArr = response.data.filter((place) => place.collection === `${collectionName}`)
+          console.log('what is placesArr', placesArr)
+          setData(placesArr)
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    getCollection()
+  }, [params.collectionType])
+
+
   return (
     <div>
-      This is ExplorePage Component
-      <Card key={index} sx={{ maxWidth: 345 }}>
+      {data.map((city, index)=>(
+        <Card
+          key={index}
+          sx={{ maxWidth: 345 }}>
           <CardMedia
             sx={{ height: 140 }}
             image={city.image}
-            // title="green iguana"
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
@@ -44,7 +74,9 @@ let {city}  = useParams
               <Button size="small" variant='outlined' >Learn More</Button>
             </Link>
           </CardActions>
-        </Card>
+        </Card>      
+      ))}
+
     </div>
   )
 }
