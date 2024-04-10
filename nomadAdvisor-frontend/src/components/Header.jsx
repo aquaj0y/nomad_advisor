@@ -14,10 +14,12 @@ export default function Header() {
           <img className='logo header-logo' src={Logo} />
           <h2 className='header-logo logo-text'>Nomad Advisor</h2>
         </Link>
-        <h3 className='explore'>Explore</h3>
+        <Link to='/explore'>
+          <h3 className='explore'>Explore</h3>
+        </Link>
       </div>
       <IoSearchOutline size={30} />
-      {/* <MenuHeader /> */}
+      <MenuHeader />
     </div>
   )
 }

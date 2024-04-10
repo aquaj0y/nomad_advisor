@@ -13,6 +13,7 @@ export default function Main() {
         <Route path='/' element={<Home /> } />
         <Route path='/newcity' element={<NewCityForm />} />
         <Route path='/cities/:id' element={<CityDetails />} />
+        <Route path='/explore' element={<ExploreCollections />} />
       </Routes>
     </div>
   )
