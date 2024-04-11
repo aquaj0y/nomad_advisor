@@ -25,4 +25,3 @@ Nomad Advisor is a platform designed to assist travelers and digital nomads in d
 - Google Maps embed API
 - [GeoDB](http://geodb-cities-api.wirefreethought.com/)
 - WeatherAPI
-  
