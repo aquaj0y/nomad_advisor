@@ -6,9 +6,9 @@ export default function Footer() {
       <div className='footer-top'>
         <img className='logo footer-logo' src={Logo} />
         <div className='footer-links'>
-          <p>About</p>
-          <p>About</p>
-          <p>About</p>
+          <a href='https://github.com/aquaj0y'>About</a>
+          <a href='https://github.com/aquaj0y'>Github</a>
+          <a href='https://www.linkedin.com/in/joy-s-wu'>LinkedIn</a>
         </div>
       </div>
 

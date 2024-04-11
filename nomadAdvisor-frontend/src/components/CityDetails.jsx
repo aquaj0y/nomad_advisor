@@ -18,9 +18,34 @@ import { Box, ThemeProvider } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 
+import Stack from '@mui/material/Stack';
+import Divider from '@mui/material/Divider';
+import { styled } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+
+// IMPORT IMAGES
+import Wework from '../assets/wework.jpeg'
+import Fora from '../assets/fora.jpeg'
+import Coffeeshop from '../assets/coffeeshop.jpeg'
+
 // API Keys 
 const googleAPI = import.meta.env.VITE_GOOGLE_API_KEY
 const weatherAPI = import.meta.env.VITE_WEATHER_API_KEY
+
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
+
 
 export default function CityDetails() {
   let { id } = useParams()
@@ -72,135 +97,202 @@ export default function CityDetails() {
 
   return (
     <div>
-      {/* SWIPER */}
-      {/* {console.log('cityTags here', cityTags)} */}
+      <div className='details-title-wrapper'>
+        <h1 className='details-title' style={{
+        fontSize:'5.5em', paddingLeft: '1.5em'
+        }}>{city.name}</h1>
+        <h2 className='details-subtitle' style={{ paddingLeft: '5.5em' }}>{city.country}</h2>
+      </div>
       <div className='details-container'>
-
         <React.Fragment>
-          <CssBaseline />
-          <Container fixed>
-            <h1 className='details-title'>{city.name}</h1>
-            <h2 className='details-subtitle'>{city.country}</h2>
-            
-            <div>
-              {/* Data */}
-              {/* <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-                {[1, 2, 3].map((value) => (
-                  <ListItem
-                    key={value}
-                    disableGutters
-                  >
-                    <ListItemText primary={`Line item ${value}`} />
-                    <ListItemText secondary={`Line item ${value}`} />
-                  </ListItem>
-                ))}
-              </List> */}
-              <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-                {/* Weather */}
-                <ListItem
-                  // key={value}
-                  disableGutters
-                >
-                  <ListItemText primary={`Temperature`} />
-                  <ListItemText secondary={temp_c} />
-                </ListItem>
+          <Container
+            fixed
+            sx={{
+              borderRadius: 1.5,
+              bgcolor: '#bbd0ff',
+              // padding: '-10px'
+            }}
+          >
+      <img className='hero-image' src={city.image}></img>
+            <div className='container'
+              style={{
+                margin: '0 auto',
+                width: '90%'
+              }}>
+              <Stack
+                direction="row"
+                divider={<Divider orientation="vertical" flexItem />}
+                spacing={2}
+                padding='2em'
+              >
+                <Item>
+                  <div>
+                  <List sx={{ width: '100%', maxWidth: 360, padding: '2em'}}>
+                    {/* Weather */}
+                    <ListItem
+                      // key={value}
+                      disableGutters
+                    >
+                      <ListItemText primary={`Temperature`} />
+                      <ListItemText secondary={temp_c} />
+                    </ListItem>
+                    
+                    {/* CountryCode */}
+                    <ListItem
+                      // key={value}
+                      disableGutters
+                    >
+                      <ListItemText primary={`Country Code`} />
+                      <ListItemText secondary={countryCode} />
+                    </ListItem>
+
+                    {/* Population */}
+                    <ListItem
+                      // key={value}
+                      disableGutters
+                    >
+                      <ListItemText primary={`Population`} />
+                      <ListItemText secondary={population} />
+                    </ListItem>
+
+                    {/* Internet Speed */}
+                    <ListItem
+                      // key={value}
+                      disableGutters
+                    >
+                      <ListItemText primary={`Internet Speed`} />
+                      <ListItemText secondary={`293`} />
+                    </ListItem>
+                    
+                    {/* Currency */}
+                    <ListItem
+                      // key={value}
+                      disableGutters
+                    >
+                      <ListItemText primary={`Currency`} />
+                      <ListItemText secondary={currency} />
+                    </ListItem>
+
+                    {/* Calling Code */}
+                    <ListItem
+                      // key={value}
+                      disableGutters
+                    >
+                      <ListItemText primary={`Calling Code`} />
+                      <ListItemText secondary={callingCode} />
+                    </ListItem>
+
+
+                  </List>
+                  </div>
+              
+                  <h2 className='details-subtitle' style={{padding: '1.5em'}}>Why We Love Here</h2>
+                  <div>
+                    {/* Tags */}
+                    {cityTags.map((tag) => (
+                      <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">{tag}</span>))}
+                  </div>
+                </Item>
                 
-                {/* CountryCode */}
-                <ListItem
-                  // key={value}
-                  disableGutters
+            <Item>
+              <h2 className='details-subtitle' style={{
+                padding: '2em',
+                marginLeft: '-1em'
+              }} >Best Nomad Neighborhood</h2>
+                  
+                  {/* Google Maps Embed */}
+              {neighborhood ?
+              <iframe
+                width="600"
+                height="450"
+                style={{ border: "0" }}
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                src={`https://www.google.com/maps/embed/v1/place?key=${googleAPI}&q=${neighborhood}`}
                 >
-                  <ListItemText primary={`Country Code`} />
-                  <ListItemText secondary={countryCode} />
-                </ListItem>
+              </iframe> : null}
 
-                 {/* Population */}
-                 <ListItem
-                  // key={value}
-                  disableGutters
-                >
-                  <ListItemText primary={`Population`} />
-                  <ListItemText secondary={population} />
-                </ListItem>
+              </Item>
+              </Stack>
 
-                {/* Internet Speed */}
-                <ListItem
-                  // key={value}
-                  disableGutters
-                >
-                  <ListItemText primary={`Internet Speed`} />
-                  <ListItemText secondary={`293`} />
-                </ListItem>
-                
-                {/* Currency */}
-                <ListItem
-                  // key={value}
-                  disableGutters
-                >
-                  <ListItemText primary={`Currency`} />
-                  <ListItemText secondary={currency} />
-                </ListItem>
+            {/* ////////////////// ///////////////// */}
+              {/* CO-WORKING SPACE */}
+              <h2
+                className='details-subtitle'
+                style={{
+                  padding: '2em',
+                  marginLeft: '-1em'
+                }}
+              >Co-working Space</h2>
 
-                {/* Calling Code */}
-                <ListItem
-                  // key={value}
-                  disableGutters
-                >
-                  <ListItemText primary={`Calling Code`} />
-                  <ListItemText secondary={callingCode} />
-                </ListItem>
+              <Box
+                height={200}
+                maxWidth={'80%'}
+                my={4}
+                sx={{
+                  margin: '0 auto',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center', 
+                  flexWrap: 'wrap', 
+                  gap: 0.1, 
+                  paddingBottom: '1em'
+              }}>
 
+                <Card sx={{
+                  maxWidth: 245,
+                  disableGutters: true,
+                  // fixed: true,
+                }}>
+                  <CardMedia
+                    sx={{
+                      height: 140,
+                    }}
+                    image={Wework}
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      Wework
+                    </Typography>
+                  </CardContent>
+                </Card>
 
-              </List>
-            </div>
-            
-            <h2 className='details-subtitle'>Why We Love Here</h2>
-            
-            <div>
-              {/* Tags */}
+                <Card sx={{
+                  maxWidth: 245,
+                  disableGutters: true,
+                  // fixed: true,
+                }}>
+                  <CardMedia
+                    sx={{ height: 140 }}
+                    image={Fora}
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      Fora
+                    </Typography>
+                  </CardContent>
+                </Card>
+                {/* <Card sx={{
+                  maxWidth: 245,
+                  disableGutters: true,
+                  // fixed: true,
+                }}>
+                  <CardMedia
+                    sx={{ height: 140 }}
+                    image={Coffeeshop}
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      Your local coffee shop
+                    </Typography>
+                  </CardContent>
+                </Card> */}
+              </Box>
 
-              {cityTags.map((tag) => (
-                <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">{tag}</span>))}
-            </div>
-
-          <h2 className='details-subtitle'>Best Nomad Neighborhood</h2>
-          {/* Google Maps Embed */}
-          <iframe
-            width="600"
-            height="450"
-            style={{ border: "0" }}
-            loading="lazy"
-            allowFullScreen
-            referrerPolicy="no-referrer-when-downgrade"
-            src={`https://www.google.com/maps/embed/v1/place?key=${googleAPI}&q=${neighborhood}`}
-            >
-          </iframe>
-          <h2>Co-working Space</h2>
+                </div>
           </Container>
         </React.Fragment>
-
-        <ThemeProvider
-          theme={{
-            palette: {
-              primary: {
-                main: '#007FFF',
-                dark: '#0066CC',
-              },
-            },
-          }}
-        >
-          <Box
-            sx={{
-              width: 100,
-              height: 100,
-              borderRadius: 1,
-              bgcolor: 'primary.main',
-              '&:hover': {
-                bgcolor: 'primary.dark',
-              },
-            }}
-          />
-        </ThemeProvider>
       </div>
       
       {/* Review Section */}
@@ -216,6 +308,8 @@ export default function CityDetails() {
           </Button>
         </Link>
       </div>
+         
     </div>
+        
   )
 }

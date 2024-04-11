@@ -4,6 +4,10 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 /* Header */
 
 .header {
@@ -74,8 +78,9 @@ body {
   justify-content: space-around;
 }
 
-.footer-links > p {
+.footer-links > a {
   padding: 1em;
+  font-size: 1.2em;
 }
 
 .footer-bottom {
@@ -100,13 +105,34 @@ body {
 }
 
 /* HOME PAGE */
-/* HOT CITIES SECTION */
+/* TRENDING CITIES SECTION */
+.trending-title-container {
+  height: 50vh;
+  background-image: url("./assets/banner5.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+}
+
+.trending-title {
+  font-size: 3em;
+  padding: 1em;
+  padding-top: 3.7em;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 2em;
+  color: whitesmoke;
+  text-shadow: 2px 2px 4px #000000;
+}
+
 .hot-cities-section {
   display: flex;
   flex-wrap: wrap;
   gap: 3em;
   margin: 0 auto;
   width: 85%;
+  padding: 1.2em;
 }
 
 /* Review Section */
@@ -130,6 +156,15 @@ body {
 
 /* CITY DETAILS PAGE */
 
+.details-title-wrapper {
+  padding: 2em;
+}
+
+.hero-image {
+  width: 100%;
+  display: block;
+}
+
 .details-container {
   width: 80%;
   margin: 0 auto;
@@ -141,7 +176,7 @@ body {
 
 .details-subtitle {
   font-size: 1.7em;
-  color: blue;
+  color: black;
 }
 
 .city-review {
@@ -150,8 +185,24 @@ body {
 
 /* Explore Collections Page */
 
+.explore-title-container {
+  height: 50vh;
+  background-image: url("./assets/banner6.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.88;
+}
+
 .page-title {
-  font-size: 2em;
+  font-size: 3em;
+  padding: 1em;
+  padding-top: 3.7em;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 2em;
+  color: whitesmoke;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .collection-containter {
@@ -164,5 +215,18 @@ body {
 }
 
 .section-title {
-  font-size: 3em;
+  font-size: 4em;
+  color: whitesmoke;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+/* Explore Page  */
+
+.explore-page-title-container {
+  height: 50vh;
+  background-image: url("./assets/banner9.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.88;
 }
