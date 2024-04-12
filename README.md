@@ -14,6 +14,8 @@ Nomad Advisor is a platform designed to assist travelers and digital nomads in d
 ## ERD
 <img width="724" alt="Screenshot 2024-04-11 at 02 35 43" src="https://github.com/aquaj0y/nomad_advisor/assets/67973116/ddc79c97-3471-4798-9bd2-56f8863dc5d4">
 
+## React Component Hierarchy Diagram
+<img width="1244" alt="Screenshot 2024-04-12 at 12 40 30" src="https://github.com/aquaj0y/nomad_advisor/assets/67973116/9cce2c7f-0ce1-48a8-8db0-60f914ea354d">
 
 ## Tech Stack
 - React
