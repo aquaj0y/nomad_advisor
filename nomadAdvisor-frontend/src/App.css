@@ -1,0 +1,250 @@
+/* Fonts */
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/* Header */
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  background-color: #2279fc;
+}
+
+.header-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header-logo {
+  cursor: pointer;
+  margin: -3px;
+}
+
+.logo {
+  width: 100px;
+}
+
+.logo-text {
+  font-size: 1.75em;
+}
+
+.explore {
+  padding: 2em;
+}
+
+#search-icon {
+  padding: 2em;
+}
+
+.footer-logo {
+  width: 150px;
+}
+
+/* Footer */
+
+.footer-flex {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: #2279fc;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.footer-links > a {
+  padding: 1em;
+  font-size: 1.2em;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-copy {
+  padding: 1em;
+}
+
+.footer-terms {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.footer-terms > p {
+  padding: 1em;
+}
+
+/* HOME PAGE */
+/* TRENDING CITIES SECTION */
+.trending-title-container {
+  height: 50vh;
+  background-image: url("./assets/banner5.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+}
+
+.trending-title {
+  font-size: 3em;
+  padding: 1em;
+  padding-top: 3.7em;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 2em;
+  color: whitesmoke;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.hot-cities-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3em;
+  margin: 0 auto;
+  width: 85%;
+  padding: 1.2em;
+}
+
+/* Review Section */
+.review-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url("../src/assets/review-section-bg.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 30vh;
+  color: white;
+}
+
+/* Pick a Season Section */
+.season-flex {
+  display: flex;
+  justify-content: center;
+}
+
+/* CITY DETAILS PAGE */
+
+.details-title-wrapper {
+  padding: 2em;
+}
+
+.hero-image {
+  width: 100%;
+  display: block;
+}
+
+.details-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.details-title {
+  font-size: 2.2em;
+}
+
+.details-subtitle {
+  font-size: 1.7em;
+  color: black;
+}
+
+.city-review {
+  background-image: url("../src/assets/review-section-bg2.jpeg");
+}
+
+/* Explore Collections Page */
+
+.explore-title-container {
+  height: 50vh;
+  background-image: url("./assets/banner6.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.88;
+}
+
+.page-title {
+  font-size: 3em;
+  padding: 1em;
+  padding-top: 3.7em;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 2em;
+  color: whitesmoke;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.collection-containter {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.collection-containter > Paper {
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 4em;
+  color: whitesmoke;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+/* Explore Page  */
+
+.explore-page-title-container {
+  height: 50vh;
+  background-image: url("./assets/banner9.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.88;
+}
+
+/* ADD CITY FORM */
+.add-city-form {
+  width: 50%;
+  margin: 0 auto;
+  padding: 5em;
+}
+
+.form-title {
+  color: whitesmoke;
+  text-shadow: 1px 1px 2px #000000;
+  font-size: 3em;
+  padding: 1em;
+  text-align: center;
+}
+.add-city-title {
+  background-image: url("../src/assets/banner7.avif");
+}
