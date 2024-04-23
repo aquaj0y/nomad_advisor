@@ -100,13 +100,24 @@ WSGI_APPLICATION = 'nomadAdvisor_django.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
+#   Localhost settings:
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'nomadadvisor',
+    #     'USER': 'nomadadvisoruser',
+    #     'PASSWORD': 'nomadadvisor',
+    #     'HOST': 'localhost'
+    # }
+
+# AWS RDS settings:
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'nomadadvisor',
-        'USER': 'nomadadvisoruser',
-        'PASSWORD': 'nomadadvisor',
-        'HOST': 'localhost'
-    }
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME':'postgres',
+            'USER':'postgres',
+            'PASSWORD':'cE1Ea5IpuyhyrqCNT2P7',
+            'HOST':'nomadadvisordb.c7gaica6ilmv.eu-north-1.rds.amazonaws.com',
+            'PORT':'5432'
+        }
 }
 
 
